@@ -4,8 +4,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ currentTime }) => {
   return (
-    <header className="bg-teal-600 text-white p-4 flex justify-between items-center">
-      <span className="text-sm font-semibold mx-auto">AI SOLUTION FOR ALL HEALTHCARE NEEDS</span>
+    <header className="bg-teal-600 text-white p-4 flex justify-end items-center">
       <span className="text-sm">{currentTime}</span>
     </header>
   );
