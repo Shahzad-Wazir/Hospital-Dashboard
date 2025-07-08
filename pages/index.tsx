@@ -75,7 +75,7 @@ const Home: NextPage = () => {
   ];
 
   return (
-    <div className={`min-h-screen ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-800'}`}>
+    <div className={`min-h-screen ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-800'} bg-[url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")] bg-cover bg-center`}>
       <Head>
         <title>Hospital Management Dashboard</title>
         <meta name="description" content="A modern hospital management dashboard" />
@@ -83,7 +83,7 @@ const Home: NextPage = () => {
       </Head>
 
       {/* Navbar */}
-      <nav className="bg-teal-500 text-white p-4 shadow-md ml-80"> {/* Adjusted ml to 20% of viewport */}
+      <nav className="bg-teal-500 text-white p-4 shadow-md ml-80 fixed top-0 w-[calc(100%-20%)] z-30">
         <ul className="flex items-center justify-between">
           <li className="relative">
             <button
@@ -95,7 +95,7 @@ const Home: NextPage = () => {
               <FaAngleDown />
             </button>
             {showRequestServices && (
-              <ul className="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-lg shadow-lg z-20 animate-slide-down">
+              <ul className="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-lg shadow-lg z-40 animate-slide-down">
                 {requestServices.map((item, index) => (
                   <li key={index}>
                     <Link href={item.href} className="block px-4 py-2 hover:bg-gray-200">
@@ -116,7 +116,7 @@ const Home: NextPage = () => {
               <FaAngleDown />
             </button>
             {showServices && (
-              <ul className="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-lg shadow-lg z-20 animate-slide-down">
+              <ul className="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-lg shadow-lg z-40 animate-slide-down">
                 {services.map((item, index) => (
                   <li key={index}>
                     <Link href={item.href} className="block px-4 py-2 hover:bg-gray-200">
@@ -142,10 +142,10 @@ const Home: NextPage = () => {
           </li>
         </ul>
       </nav>
-      <div className="flex">
+      <div className="flex mt-16">
         <Sidebar isOpen={isSidebarOpen} />
-        <main className="flex-1 p-6 ml-80 mt-16"> {/* Adjusted ml and added mt for navbar height */}
-          <h1 className="text-3xl font-bold mb-6 text-teal-600">Hospital Dashboard</h1>
+        <main className="flex-1 p-6 ml-80 w-[calc(80%-20rem)]" style={{ maxHeight: 'calc(100vh - 4rem)' }}>
+          <h1 className="text-3xl font-bold mb-6 text-teal-600 animate-pulse">AI SOLUTION FOR ALL HEALTHCARE NEEDS</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {dashboardSections.map((section) => (
               <DashboardCard
@@ -154,6 +154,7 @@ const Home: NextPage = () => {
                 description={`${section.count} ${section.title.toLowerCase()} active`}
                 href={section.href}
                 icon={section.icon}
+                count={section.count}
               />
             ))}
           </div>
