@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @keyframes slideDown {
   from {
     opacity: 0;
@@ -14,4 +15,37 @@
 
 .animate-slide-down {
   animation: slideDown 0.3s ease-out;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100% !important;
+    transform: translateX(-100%) !important;
+  }
+  .sidebar.open {
+    transform: translateX(0) !important;
+  }
+  nav {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  main {
+    margin-left: 0 !important;
+    width: 100% !important;
+    margin-top: 4rem !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sidebar {
+    width: 25% !important;
+  }
+  nav {
+    margin-left: 16rem !important; /* 256px equivalent to ml-64 */
+    width: 75% !important;
+  }
+  main {
+    margin-left: 16rem !important;
+    width: 75% !important;
+  }
 }
