@@ -145,7 +145,7 @@ const Home: NextPage = () => {
       <div className="flex mt-16">
         <Sidebar isOpen={isSidebarOpen} />
         <main className="flex-1 p-6 ml-80 w-[calc(80%-20rem)]" style={{ maxHeight: 'calc(100vh - 4rem)' }}>
-          <h1 className="text-3xl font-bold mb-6 text-teal-600 animate-pulse">AI SOLUTION FOR ALL HEALTHCARE NEEDS</h1>
+          <h1 className="text-3xl font-bold mb-6 text-blue-700">AI SOLUTION FOR ALL HEALTHCARE NEEDS</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {dashboardSections.map((section) => (
               <DashboardCard
