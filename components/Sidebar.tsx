@@ -63,7 +63,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
       <aside
         className={`bg-teal-600 text-white p-4 transform ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
-        } md:translate-x-0 transition-transform duration-300 ease-in-out fixed top-0 bottom-0 z-10 w-64`}
+        } md:translate-x-0 transition-transform duration-300 ease-in-out fixed top-0 bottom-0 z-10 w-[20%]`}
       >
         {/* Main Header Content */}
         <div className="mt-0 flex flex-col items-center h-full">
